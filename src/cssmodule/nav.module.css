@@ -1,21 +1,27 @@
-.layout{
+.layout {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
 
 }
-.layout p{
+
+.layout p {
     position: absolute;
     font-weight: 600;
     font-size: 2rem;
     margin-left: 2rem;
 }
 
-.navbar{
-    padding: 2rem 0;
+.navbar {
+    padding: 2rem 0 0;
+    border-bottom: 8px solid red;
+
+
+
 }
-.nsearch{
+
+.nsearch {
     width: 80vmin;
     border: 2.6px solid black;
     border-radius: 5px;
@@ -24,9 +30,10 @@
     position: relative;
     margin: 0 auto;
 
+
 }
 
-.nsearch::after{
+.nsearch::after {
     content: "🔍";
     position: absolute;
     right: 2%;
@@ -34,7 +41,7 @@
     font-size: 1.3rem;
 }
 
-.nsearch input[type="text"]{
+.nsearch input[type="text"] {
     width: 100%;
     font-size: 1.3rem;
     outline: none;
@@ -42,18 +49,23 @@
     background-color: #ffffff;
 
 }
-.hadapter{
+
+.hadapter {
     position: relative;
 }
-.flow{
+
+.flow {
     display: flex;
     font-size: 0.96rem;
     overflow-x: scroll;
-    margin: 1rem;
+    margin: 2rem 1rem 0 1rem;
+
+
 
 
 }
-.flow li{
+
+.flow li {
     cursor: pointer;
     flex-grow: 1;
     flex-shrink: 0;
@@ -62,24 +74,38 @@
     margin-left: 0.5rem;
 
 }
-.left{
+
+.left {
     position: absolute;
     top: 15%;
     left: 0;
-    margin:0.4rem 0 0.4rem;
+    margin: 0.4rem 0 0.4rem;
+    box-shadow: 5px 0px 8px 8px rgb(230, 230, 230);
+    background-color: rgb(230, 230, 230);
 }
-.right{
+
+.right {
     position: absolute;
     right: 0;
-    top: 15%;
-    margin:0.4rem 0 0.4rem;
+    top: 14.5%;
+    margin: 0.4rem 0 0.4rem;
+    box-shadow:  5px 0px 8px 8px rgb(231, 231, 231);
+    background-color: rgb(231, 231, 231);
 }
-.flow::-webkit-scrollbar{
+
+.flow::-webkit-scrollbar {
     height: 0;
 }
 
-@media (max-width: 749px){
-    .left, .right{
+@media (max-width: 749px) {
+
+    .left,
+    .right {
         display: none;
+    }
+
+    .flow {
+        margin: 1rem 0 0 0;
+
     }
 }
