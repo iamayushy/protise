@@ -21,13 +21,13 @@ const Navbar = () => {
             </section>
             </section>
             <section className={nav.hadapter}>
-                <BiLeftArrow size={20} className={nav.left} onClick={() => move(250)} />
+                <BiLeftArrow size={20} className={nav.left} onClick={() => move(300)} />
                 <ul ref={eleRef}  className={nav.flow}>
                     {catAdapter && catAdapter.map((category, index) => {
                         return <li key={index} >{category}</li>
                     })}
                 </ul>
-                <BiRightArrow size={20} className={nav.right} onClick={() => move(-250)}/>
+                <BiRightArrow size={20} className={nav.right} onClick={() => move(-300)}/>
             </section>
         </div>
     )

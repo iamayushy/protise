@@ -78,3 +78,8 @@
     height: 0;
 }
 
+@media (max-width: 749px){
+    .left, .right{
+        display: none;
+    }
+}
