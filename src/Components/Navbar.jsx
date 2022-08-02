@@ -1,7 +1,7 @@
 import nav from '../cssmodule/nav.module.css'
 import { catAdapter } from '../categories'
 import { useRef } from 'react'
-import {BiLeftArrow, BiRightArrow} from 'react-icons/bi'
+import {AiFillCaretLeft, AiFillCaretRight} from 'react-icons/ai'
 const Navbar = () => {
     const eleRef = useRef()
 
@@ -9,6 +9,8 @@ const Navbar = () => {
         const ele = eleRef.current
         ele.scrollBy(0+val, 0)
     }
+
+   
 
     return(
         <div className={nav.navbar}>
@@ -21,13 +23,13 @@ const Navbar = () => {
             </section>
             </section>
             <section className={nav.hadapter}>
-                <BiLeftArrow size={20} className={nav.left} onClick={() => move(300)} />
+                <AiFillCaretLeft size={20} className={nav.left} onClick={() => move(300)} />
                 <ul ref={eleRef}  className={nav.flow}>
                     {catAdapter && catAdapter.map((category, index) => {
                         return <li key={index} >{category}</li>
                     })}
                 </ul>
-                <BiRightArrow size={20} className={nav.right} onClick={() => move(-300)}/>
+                <AiFillCaretRight size={20} className={nav.right} onClick={() => move(-300)}/>
             </section>
         </div>
     )
