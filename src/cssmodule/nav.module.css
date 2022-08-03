@@ -3,6 +3,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    background-color: white;
 
 }
 
@@ -11,12 +12,13 @@
     font-weight: 600;
     font-size: 2rem;
     margin-left: 2rem;
+    padding: 2rem;
 }
 
 .navbar {
     padding: 2rem 0 0;
     border-bottom: 8px solid red;
-
+    background-color: white;
 
 
 }
@@ -52,6 +54,7 @@
 
 .hadapter {
     position: relative;
+    background-color: white;
 }
 
 .flow {

@@ -4,14 +4,9 @@ import { useRef, useEffect, useState } from "react";
 import { api } from "../UnsplashApi/Unsplash";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { PhotoCard } from "./PhotoCard";
+import { CategorySlider } from "./CategorySlider";
 
-const Navbar = () => {
-  const eleRef = useRef();
-
-  const move = (val) => {
-    const ele = eleRef.current;
-    ele.scrollBy(0 + val, 0);
-  };
+const Navbar = ({children}) => {
 
   useEffect(() => {
     // api.search
@@ -34,29 +29,11 @@ const Navbar = () => {
           <input type="text" placeholder="search for any image" />
         </section>
 
-      </section>
 
-      <section className={nav.hadapter}>
-        <AiFillCaretLeft
-          size={20}
-          className={nav.left}
-          onClick={() => move(300)}
-        />
-
-        <ul ref={eleRef} className={nav.flow}>
-          {catAdapter &&
-            catAdapter.map((category, index) => {
-              return <li key={index}>{category}</li>;
-            })}
-        </ul>
-
-        <AiFillCaretRight
-          size={20}
-          className={nav.right}
-          onClick={() => move(-300)}
-        />
 
       </section>
+
+      {children}
     </div>
   );
 };
