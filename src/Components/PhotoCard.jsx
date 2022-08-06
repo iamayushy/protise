@@ -1,9 +1,9 @@
 const PhotoCard = ({ photo }) => {
     const { user, urls } = photo;
-
+    console.log(user, urls)
     return (
       <>
-        <img className="img" src={urls.regular} />
+        <img className="img" src={urls.regular} width="200px" />
         <a
           className="credit"
           target="_blank"
