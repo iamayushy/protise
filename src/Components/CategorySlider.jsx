@@ -3,8 +3,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { catAdapter } from "../categories";
 import nav from "../cssmodule/nav.module.css";
 const CategorySlider = ({ getCategory }) => {
-
-    const eleRef = useRef();
+  const eleRef = useRef();
 
   const move = (val) => {
     const ele = eleRef.current;
