@@ -4,15 +4,18 @@ import { catAdapter } from "../categories"
 import { SingleImage } from "../Components/SingleImage"
 import { useEffect, useState } from "react"
 import { api } from "../UnsplashApi/Unsplash"
+import { PhotoCard } from "../Components/PhotoCard"
 
 const UserPage = () => {
     const [image, setImage] = useState('')
-
+    const [fetchedImage, setFetchedImage] = useState([])
     const fetchImage = (category) => {
         api.search
         .getPhotos({query: category, perPage:1})
         .then(res => {
-            console.log(res.response.results[0])
+            const {response} = res
+            const {results} = response
+            setFetchedImage(results)
         })
     }
 
@@ -20,25 +23,19 @@ const UserPage = () => {
         fetchImage(catAdapter[idx])
     }
 
-    // useEffect(() => {
-    //     api.search
-    //         .getPhotos({query: 'current events', perPage:1})
-    //         .then(result => {
-    //             setPhotosResponse(result);
-    //             console.log(result)
-    //         })
-    //         .catch(() => {
-    //             console.log("something went wrong!");
-    //         });
-    //   }, [image]);
+    useEffect(() => {
+       fetchImage(catAdapter[0])
+      }, []);
 
     return(
         <>
         <Navbar>
             <CategorySlider getCategory={getIndex}/>
         </Navbar>
-        {/* show up single Image */}
-        {/* <SingleImage/> */}
+        {fetchedImage.length > 0 && fetchedImage.map((ele, i) =>
+            (<SingleImage key={ele.id} photo={ele}/>)
+        )}
+
         </>
     )
 }

@@ -1,11 +1,7 @@
 .box{
-    position: absolute;
-    top: -20%;
-    z-index: -11;
-    left: 0;
-    right: 0;
+    background-position: center center;
+    height: 75vmin;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.pic{
-    width: 100%;
-    height: auto;
-}
+
