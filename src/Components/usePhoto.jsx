@@ -14,8 +14,8 @@ const usePhoto = ({searchQuery}) => {
             .then(res => {
                 const {response} = res
                 const {results} = response
-                setList(prev => [...results])
-                console.log(list)
+                setList([...list, ...results])
+                setLoading(false)
             })
             .catch(e => {
                 console.log(e)
