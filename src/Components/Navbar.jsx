@@ -1,13 +1,12 @@
 import nav from "../cssmodule/nav.module.css";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ children, handleChange, handleKey }) => {
   return (
     <div className={nav.navbar}>
       <section className={nav.layout}>
-        <p>Protoise</p>
 
         <section className={nav.nsearch}>
-          <input type="text" placeholder="search for any image" />
+          <input onKeyUp={(e) => handleKey(e)}   type="text" onChange={(e) => handleChange(e)} placeholder="search for any image and enter" />
         </section>
       </section>
 
