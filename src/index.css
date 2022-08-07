@@ -4,7 +4,61 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
 }
 body{
     font-family: 'Poppins', sans-serif;
+}
+.dynamic-grid{
+    margin: 2rem auto;
+    width: 90%;
+    overflow: hidden;
+    column-count: 3;
+    column-fill: auto;
+
+}
+.img{
+    width: 100%;
+
+}
+.image-card{
+    position: relative;
+    z-index: -1;
+}
+.image-desc{
+    position: absolute;
+    left: 4%;
+    bottom: 8%;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 1rem;
+}
+
+.image-desc img{
+    border-radius: 100%;
+}
+@media (max-width: 1080px){
+    .dynamic-grid{
+        column-count: 2;
+    }
+}
+@media (max-width: 750px){
+    .dynamic-grid{
+        column-count: 1;
+        width: 100%;
+    }
+
+    .image-desc{
+        position: static;
+        padding: 0.5rem;
+        color: black;
+        background-color: whitesmoke;
+
+    }
+    .image-card{
+        margin-top: 0.5rem;
+        border-top: 0.4px solid rgb(181, 181, 181);
+
+    }
 }

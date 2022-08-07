@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import {useEffect, useState } from "react"
 import { api } from "../UnsplashApi/Unsplash"
 
 const usePhoto = ({searchQuery}) => {
@@ -10,11 +10,11 @@ const usePhoto = ({searchQuery}) => {
             setLoading(true)
 
             api.search
-            .getPhotos({query: searchQuery, perPage:20})
+            .getPhotos({query: searchQuery, perPage:10})
             .then(res => {
                 const {response} = res
                 const {results} = response
-                setList(prev => [...prev, ...results])
+                setList(prev => [...results])
                 console.log(list)
             })
             .catch(e => {
