@@ -1,3 +1,4 @@
+
 const PhotoCard = ({ photo }) => {
     const { user, urls } = photo;
     return (

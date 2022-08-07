@@ -12,7 +12,7 @@ const UserPage = () => {
   const [image, setImage] = useState("");
   const [fetchedImage, setFetchedImage] = useState([]);
   const [userQuery, setUserQuery] = useState(catAdapter[0]);
-  const { list } = usePhoto({ searchQuery: userQuery });
+  const { list, loading } = usePhoto({ searchQuery: userQuery });
 
   const fetchImage = (category) => {
     api.search.getPhotos({ query: category, perPage: 1 }).then((res) => {
@@ -41,10 +41,11 @@ const UserPage = () => {
         fetchedImage.map((ele) => <SingleImage key={ele.id} photo={ele} />)}
 
         <ListImage>
-            {list.length > 0 &&
+            {!loading?
+            list.length > 0 &&
             list.map((ele, i) => {
                 return <PhotoCard key={i} photo={ele}/>
-            })}
+            }) : <h1>Loading..</h1>}
         </ListImage>
     </>
   );
