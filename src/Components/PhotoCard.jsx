@@ -1,16 +1,16 @@
 const PhotoCard = ({ photo }) => {
     const { user, urls } = photo;
-    console.log(user, urls)
     return (
       <>
-        <img className="img" src={urls.regular} width="200px" />
-        <a
-          className="credit"
-          target="_blank"
-          href={`https://unsplash.com/@${user.username}`}
-        >
-          {user.name}
-        </a>
+        <section className="image-card">
+
+          <section className="image-desc">
+          <img src={user.profile_image.small} alt="" />
+          <p>{user.name}</p>
+          </section>
+        <img className="img" src={urls.full}  />
+
+        </section>
       </>
     );
   };
