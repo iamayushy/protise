@@ -6,7 +6,7 @@ const Navbar = ({ children, handleChange, handleKey }) => {
       <section className={nav.layout}>
 
         <section className={nav.nsearch}>
-          <input onKeyUp={(e) => handleKey(e)}   type="text" onChange={(e) => handleChange(e)} placeholder="search for any image and enter" />
+          <input onKeyUp={(e) => handleKey(e)}   type="text" onChange={(e) => handleChange(e)} placeholder="search and enter" />
         </section>
       </section>
 
